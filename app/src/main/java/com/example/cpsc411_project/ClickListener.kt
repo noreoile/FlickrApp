@@ -15,7 +15,6 @@ class ClickListener(context: Context, recyclerView: RecyclerView, private val li
 
     interface OnRecyclerClickListener {
         fun onItemClick(view: View, position: Int)
-        fun onItemLongClick(view: View, position: Int)
     }
 
     // add the gestureDetector
@@ -26,7 +25,7 @@ class ClickListener(context: Context, recyclerView: RecyclerView, private val li
             val childView = recyclerView.findChildViewUnder(e.x, e.y)
             Log.d(TAG, ".onLongPress calling listener.onItemLongClick")
             if (childView != null) {
-                listener.onItemLongClick(childView, recyclerView.getChildAdapterPosition(childView))
+                listener.onItemClick(childView, recyclerView.getChildAdapterPosition(childView))
             }
             return true
         }

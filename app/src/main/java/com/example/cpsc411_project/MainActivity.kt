@@ -34,11 +34,6 @@ class MainActivity : BaseActivity(), GetRawData.OnDownloadComplete,
     }
 
     override fun onItemClick(view: View, position: Int) {
-        Log.d(TAG, ".onItemClick: starts")
-        Toast.makeText(this, "Normal tap at position $position", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onItemLongClick(view: View, position: Int) {
         Log.d(TAG, ".onItemLongClick: starts")
 //        Toast.makeText(this, "Long tap at position $position", Toast.LENGTH_SHORT).show()
         val photo = flickrRecyclerViewAdapter.getPhoto(position)
